@@ -67,7 +67,7 @@ function adoptVersionAndRepo(html) {
 
 function writeHtmlGzipped(sourceFile, resultFile) {
   console.info("Reading " + sourceFile);
-  new inliner(sourceFile, function (error, html) {
+  new inliner(sourceFile, { images: false }, (error, html) => {
     console.info("Inlined " + html.length + " characters");
 
     if (error) {

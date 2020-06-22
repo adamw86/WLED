@@ -28,8 +28,8 @@
 		<button type="button" onclick="B()">Back</button><button type="submit">Save & Connect</button><hr>
 		<h2>WiFi setup</h2>
 		<h3>Connect to existing network</h3>
-		Network name (SSID, empty to not connect): <br><input name="CS" maxlength="32"><br>
-		Network password: <br> <input type="password" name="CP" maxlength="63"><br>
+		Network name (SSID, empty to not connect): <br><input name="CS" value="NETGEAR18" maxlength="32"><br>
+		Network password: <br> <input type="password" name="CP" value="curlymoon921" maxlength="63"><br>
 		Static IP (leave at 0.0.0.0 for DHCP):<br>
 		<input name="I0" type="number" min="0" max="255" required> .
 		<input name="I1" type="number" min="0" max="255" required> .
@@ -51,13 +51,13 @@
 		<h3>Configure Access Point</h3>
 		AP SSID (leave empty for no AP):<br> <input name="AS" maxlength="32"><br>
 		Hide AP name: <input type="checkbox" name="AH"><br>
-		AP password (leave empty for open):<br> <input type="password" name="AP" maxlength="63"><br>
+		AP password (leave empty for open):<br> <input type="password" name="AP" value="Frame" maxlength="63"><br>
 		Access Point WiFi channel: <input name="AC" type="number" min="1" max="13" required><br>
     AP opens:
     <select name="AB">
     <option value="0">No connection after boot</option>
     <option value="1">Disconnected</option>
-    <option value="2">Always</option>
+	<option value="2" selected>Always</option>
     <option value="3">Never (not recommended)</option></select><br>
 		AP IP: <span class="sip"> Not active </span><br>
 		<h3>Experimental</h3>

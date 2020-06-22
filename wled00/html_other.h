@@ -66,11 +66,10 @@ d="M640 409.6c-42.349 0-76.8-34.453-76.8-76.8s34.451-76.8 76.8-76.8 76.8 34.453 
 </path><path 
 d="M486.4 870.4c-183.506 0-332.8-149.294-332.8-332.8 0-14.139 11.462-25.6 25.6-25.6s25.6 11.461 25.6 25.6c0 155.275 126.325 281.6 281.6 281.6s281.6-126.325 281.6-281.6c0-14.139 11.461-25.6 25.6-25.6s25.6 11.461 25.6 25.6c0 183.506-149.294 332.8-332.8 332.8z">
 </path></symbol></defs></svg><br><br><svg><use xlink:href="#lnr-smile"></use>
-</svg><h1>Welcome to WLED!</h1><h3>Thank you for installing my application!</h3>
-If you encounter a bug or have a question/feature suggestion, feel free to open a GitHub issue!
-<br><br><b>Next steps:</b><br><br>Connect the module to your local WiFi here!
-<br><button onclick='window.location.href="/settings/wifi"'>WiFi settings
-</button><br><i>Just trying this out in AP mode?</i><br><button 
+</svg><h1>Welcome to WLED!</h1><br><br><b>Next steps:</b><br><br>
+Connect the module to your local WiFi here!<br><button 
+onclick='window.location.href="/settings/wifi"'>WiFi settings</button><br><i>
+Just trying this out in AP mode?</i><br><button 
 onclick='window.location.href="/sliders"'>To the controls!</button></body>
 </html>)=====";
 

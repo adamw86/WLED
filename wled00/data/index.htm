@@ -37,6 +37,9 @@ html {
 body {
   margin: 0;
   background-color: var(--c-bg);
+  background-image: url('https://colorimetrylights.com/wp-content/uploads/2018/11/k7gqCg6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: Helvetica, Verdana, sans-serif;
   font-size: 17px;
   color: var(--c-tx);
@@ -197,7 +200,7 @@ button {
 
 .bot button {
   padding: 10px 0 8px 0;
-  width:25%;
+  width:50%;
 }
 
 .tab button:hover {
@@ -803,10 +806,13 @@ input[type=number]::-webkit-outer-spin-button {
       <button id="buttonPower" onclick="togglePower()" class="tgl"><i class="icons">&#xe08f;</i><p class="tab-label">Power</p></button>
       <button id="buttonNl" onclick="toggleNl()"><i class="icons">&#xe2a2;</i><p class="tab-label">Timer</p></button>
       <button id="buttonSync" onclick="toggleSync()"><i class="icons">&#xe116;</i><p class="tab-label">Sync</p></button>
-      <button id="buttonSr" onclick="toggleLiveview()"><i class="icons">&#xe410;</i><p class="tab-label">Peek</p></button>
-	  <button id="buttonI" onclick="toggleInfo()"><i class="icons">&#xe34b;</i><p class="tab-label">Info</p></button>
+    <!--  <button id="buttonSr" onclick="toggleLiveview()"><i class="icons">&#xe410;</i><p class="tab-label">Peek</p></button>
+      <button id="buttonI" onclick="toggleInfo()"><i class="icons">&#xe34b;</i><p class="tab-label">Info</p></button>
+    -->
       <button onclick="window.location.href = '/settings';"><i class="icons">&#xe0a2;</i><p class="tab-label">Config</p></button>
-	  <button id="buttonPcm" onclick="togglePcMode(true)"><i class="icons">&#xe23d;</i><p class="tab-label">PC Mode</p></button>
+    <!---
+    <button id="buttonPcm" onclick="togglePcMode(true)"><i class="icons">&#xe23d;</i><p class="tab-label">PC Mode</p></button>
+    -->
     </div>
     <div id="briwrap">
       <p class="hd">Brightness</p>
@@ -887,7 +893,7 @@ input[type=number]::-webkit-outer-spin-button {
     <br>
   </div>
   
-  <div id="Segments" class="tabcontent">
+ <!--  <div id="Segments" class="tabcontent">
     <div id="segcont">
       Loading...
     </div>
@@ -930,13 +936,13 @@ input[type=number]::-webkit-outer-spin-button {
     Time per preset: <input id="cyct" class="noslide" type="number" min="0.2" max="6553.5" step="0.1" value="1.2">s<br>
     Transition: <input id="cyctt" class="noslide" type="number" min="0" max="65.5" step="0.1" value="0.7">s
   </div>
+  -->
 </div>
+
 
 <div class="tab bot" id="bot">
   <button class="tablinks" onclick="openTab(0)"><i class="icons">&#xe2b3;</i><p class="tab-label">Colors</p></button>
   <button class="tablinks" onclick="openTab(1)"><i class="icons">&#xe23d;</i><p class="tab-label">Effects</p></button>
-  <button class="tablinks" onclick="openTab(2)"><i class="icons">&#xe34b;</i><p class="tab-label">Segments</p></button>
-  <button class="tablinks" onclick="openTab(3)"><i class="icons">&#xe04c;</i><p class="tab-label">Favorites</p></button>
 </div>
 
 <div id="toast"></div>
@@ -947,8 +953,8 @@ input[type=number]::-webkit-outer-spin-button {
   </div><br>
 <div id="kv">Loading...</div><br>
 <button class="btn infobtn" onclick="requestJson(null)">Refresh</button>
-<button class="btn infobtn" onclick="toggleInfo()">Close Info</button><br>
-<button class="btn infobtn" onclick="openGH()">WLED Wiki</button>
+<!--<button class="btn infobtn" onclick="toggleInfo()">Close Info</button><br>
+<button class="btn infobtn" onclick="openGH()">WLED Wiki</button> -->
 <button class="btn infobtn" id="resetbtn" onclick="cnfReset()">Reboot WLED</button><br>
 <span class="h">Made with <span id="heart">&#10084;</span> by Aircoookie and the WLED community</span>
 </div>
@@ -1192,9 +1198,9 @@ function populateSegments(s)
     </div><br>`;
   }
 
-  d.getElementById('segcont').innerHTML = cn;
+ // d.getElementById('segcont').innerHTML = cn;
   if (lowestUnused >= maxSeg) {
-    d.getElementById('segutil').innerHTML = '<span class="h">Maximum number of segments reached.</span>';
+ //   d.getElementById('segutil').innerHTML = '<span class="h">Maximum number of segments reached.</span>';
     noNewSegs = true;
   } else if (noNewSegs) {
     resetUtil();
@@ -1323,10 +1329,22 @@ function requestJson(command, rinfo = true, verbose = true) {
 		var x='',y='<option value="0">Default</option>';
 		json.effects.shift(); //remove solid
 		for (i in json.effects) json.effects[i] = {"id": parseInt(i)+1, "name":json.effects[i]};
-		json.effects.sort(compare);
-		for (i in json.effects) {
-		x += '<button class="btn" id="fxb'+ json.effects[i].id +'" onclick="setX('+ json.effects[i].id +');">'+ json.effects[i].name +'</button><br>';
-		}
+		//json.effects.sort(compare);
+		//for (i in json.effects) {
+    x += '<button class="btn" id="fxb'+ json.effects[7].id +'" onclick="setX('+ json.effects[7].id +');">'+ json.effects[7].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[8].id +'" onclick="setX('+ json.effects[8].id +');">'+ json.effects[8].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[23].id +'" onclick="setX('+ json.effects[23].id +');">'+ json.effects[23].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[25].id +'" onclick="setX('+ json.effects[25].id +');">'+ json.effects[25].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[28].id +'" onclick="setX('+ json.effects[28].id +');">'+ json.effects[28].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[29].id +'" onclick="setX('+ json.effects[29].id +');">'+ json.effects[29].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[43].id +'" onclick="setX('+ json.effects[43].id +');">'+ json.effects[43].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[48].id +'" onclick="setX('+ json.effects[48].id +');">'+ json.effects[48].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[52].id +'" onclick="setX('+ json.effects[52].id +');">'+ json.effects[52].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[63].id +'" onclick="setX('+ json.effects[63].id +');">'+ json.effects[63].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[64].id +'" onclick="setX('+ json.effects[64].id +');">'+ json.effects[64].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[86].id +'" onclick="setX('+ json.effects[86].id +');">'+ json.effects[86].name +'</button><br>';
+    x += '<button class="btn" id="fxb'+ json.effects[3].id +'" onclick="setX('+ json.effects[3].id +');">'+ json.effects[3].name +'</button><br>';
+  //}
 
 		json.palettes.shift(); //remove default
 		for (i in json.palettes) json.palettes[i] = {"id": parseInt(i)+1, "name":json.palettes[i]};
@@ -1361,11 +1379,11 @@ function requestJson(command, rinfo = true, verbose = true) {
     syncSend = s.udpn.send;
     savedPresets = s.pss;
     currentPreset = s.ps;
-    d.getElementById('cyToggle').checked = (s.pl < 0) ? false : true;
-    d.getElementById('cycs').value = s.ccnf.min;
-    d.getElementById('cyce').value = s.ccnf.max;
-    d.getElementById('cyct').value = s.ccnf.time /10;
-    d.getElementById('cyctt').value = s.transition /10;
+    //d.getElementById('cyToggle').checked = (s.pl < 0) ? false : true;
+   // d.getElementById('cycs').value = s.ccnf.min;
+   // d.getElementById('cyce').value = s.ccnf.max;
+   // d.getElementById('cyct').value = s.ccnf.time /10;
+   // d.getElementById('cyctt').value = s.transition /10;
     
     var selc=0; var ind=0;
     populateSegments(s);
@@ -1408,7 +1426,7 @@ function requestJson(command, rinfo = true, verbose = true) {
 function togglePower() {
   isOn = !isOn;
   var obj = {"on": isOn};
-  obj.transition = parseInt(d.getElementById('cyctt').value*10);
+ // obj.transition = parseInt(d.getElementById('cyctt').value*10);
   requestJson(obj);
 }
 
@@ -1437,6 +1455,7 @@ function toggleSync() {
   requestJson(obj);
 }
 
+/*
 function toggleLiveview() {
   isLv = !isLv;
   d.getElementById('liveview').style.display = (isLv) ? "block":"none";
@@ -1445,13 +1464,16 @@ function toggleLiveview() {
   d.getElementById('buttonSr').className = (isLv) ? "active":"";
   size();
 }
+*/
 
+/*
 function toggleInfo() {
   isInfo = !isInfo;
   if (isInfo) populateInfo(lastinfo);
   d.getElementById('info').style.transform = (isInfo) ? "translateY(0px)":"translateY(100%)";
   d.getElementById('buttonI').className = (isInfo) ? "active":"";
 }
+*/
 
 function makeSeg() {
   var ns = 0;
@@ -1479,12 +1501,12 @@ function makeSeg() {
         <i class="icons slider-icon cnf half" id="segc${lowestUnused}" onclick="setSeg(${lowestUnused}); resetUtil();">&#xe390;</i>
       </div>
     </div>`;
-  d.getElementById('segutil').innerHTML = cn;
+ // d.getElementById('segutil').innerHTML = cn;
 }
 
 function resetUtil() {
   var cn = `<button class="btn btn-i rect" onclick="makeSeg()"><i class="icons btn-icon">&#xe18a;</i>Add segment</button><br>`;
-  d.getElementById('segutil').innerHTML = cn;
+ // d.getElementById('segutil').innerHTML = cn;
 }
 
 function selSegEx(s)
@@ -1557,7 +1579,7 @@ function setPalette()
 
 function setBri() {
   var obj = {"bri": parseInt(d.getElementById('sliderBri').value)};
-  obj.transition = parseInt(d.getElementById('cyctt').value*10);
+ // obj.transition = parseInt(d.getElementById('cyctt').value*10);
   requestJson(obj);
 }
 
@@ -1576,7 +1598,7 @@ function setLor(i) {
   requestJson(obj);
 }
 
-function toggleCY() {
+/*function toggleCY() {
   var obj = {"pl" : -1};
   if (d.getElementById('cyToggle').checked)
   {
@@ -1586,6 +1608,7 @@ function toggleCY() {
   
   requestJson(obj);
 }
+*/
 
 function togglePS() {
   ps = !ps;
@@ -1599,7 +1622,7 @@ function togglePS() {
     }
   }
   
-  d.getElementById("psLabel").innerHTML = (ps) ? "Save to slot":"Load from slot";
+  //d.getElementById("psLabel").innerHTML = (ps) ? "Save to slot":"Load from slot";
 }
 
 function setPreset(i) {
@@ -1662,7 +1685,7 @@ function setColor(fromPicker) {
   } else if (csel == 2) {
     obj = {"seg": {"col": [[],[],[col.r, col.g, col.b, whites[csel]]]}};
   }
-  obj.transition = parseInt(d.getElementById('cyctt').value*10);
+ // obj.transition = parseInt(d.getElementById('cyctt').value*10);
   requestJson(obj);
 }
 
